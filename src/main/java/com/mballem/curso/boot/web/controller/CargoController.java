@@ -63,6 +63,7 @@ public class CargoController {
 		if (cargoService.cargoTemFuncionarios(id)) {
 			attr.addFlashAttribute("fail", "Cargo não excluído. Há funcionário(s) vinculado(s).");
 		} else {
+			cargoService.excluir(id);
 			attr.addFlashAttribute("success", "Cargo excluído com sucesso.");
 		}
 		return "redirect:/cargos/listar";
